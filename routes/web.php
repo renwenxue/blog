@@ -20,6 +20,9 @@ Route::view('/login','index.login');
 Route::view('/reg','index.reg');
 
 
+// Route::get('/','Index\IndexController@index');
+
+
 //1：实现两种方式访问http://www.1908.com/show 输出“这里是商品详情页”字样
 Route::get('/show',function(){
 	echo "这里是商品的详情页";

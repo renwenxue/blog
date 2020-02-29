@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Cookie;
 use AlibabaCloud\Client\AlibabaCloud;
 use AlibabaCloud\Client\Exception\ClientException;
 use AlibabaCloud\Client\Exception\ServerException;
+use App\Category;
+use App\Goods;
 
 class IndexController extends Controller
 {
@@ -26,12 +28,14 @@ class IndexController extends Controller
 		// Cookie::queue('aa','11',2);
 	}
     public function index(){
-    	//获取cookie第一种
-    	// echo request()->cookie('name');
-    	// 获取cookie第二种
-    	// $value = Cookie::get('aa');
-    	// echo $value;
-    	return view('index.index');
+    	//根据顶级分类查询数据
+    	$where=[
+    		['parent_id',"=",0]
+    	];
+    	$cateInfo=Category::where($where)->get();
+    	$goodsInfo=Goods::get();
+    	
+    	return view('index.index',['cateInfo'=>$cateInfo,'goodsInfo'=>$goodsInfo]);
     }
     
 }

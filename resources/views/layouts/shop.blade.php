@@ -29,7 +29,7 @@
      <div class="height1"></div>
      <div class="footNav">
       <dl>
-       <a href="index.html">
+       <a href="{{url('/')}}">
         <dt><span class="glyphicon glyphicon-home"></span></dt>
         <dd>微店</dd>
        </a>

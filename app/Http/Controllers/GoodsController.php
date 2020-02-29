@@ -17,6 +17,7 @@ class GoodsController extends Controller
      */
     public function index()
     {
+        echo "123";
         //清除缓存
         // Cache::flush();
         $page=request()->page??1;
